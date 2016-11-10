@@ -1,0 +1,28 @@
+<header-nav></header-nav>
+<form name="createAuctionForm" ng-controller="CreateAuktionController">
+
+    <div id="loginForm">
+        <h1>Neue Auktion erstellen</h1>
+        <input type="text" class="form-control" ng-model="auctionForm.auction.produkt" name="titel" required required-message="'Yo! This field is required..'" placeholder="Buchtitel">
+        <textarea rows="4" cols="50" class="form-control" ng-model="auctionForm.auction.beschreibung" name="description"   placeholder="Beschreibung" style="margin-top: 10px"></textarea>
+        <input type="number" class="form-control" ng-model="auctionForm.auction.min" name="min" required-message="'Yo! This field is required..'" required placeholder="Mindestgebot" style="margin-top: 10px">
+        <div class="btn-group" style="margin-top: 10px">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Zustand <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">wie neu</a></li>
+    <li><a href="#">gut</a></li>
+    <li><a href="#">abgenützt</a></li>
+  </ul>
+</div>
+            <input type="date" class="form-control" ng-model="auctionForm.auction.date" name="date" required-message="'Yo! This field is required..'" required placeholder="Dauer">
+
+
+        <a href class="btn btn-default btn-sm" ng-model="regForm.button" ng-disabled="myregister.$invalid" ng-click="regForm.register(regForm.credentials)">Auktion anlegen</a>
+        <a href class="btn btn-default btn-sm" ng-click="regForm.back()">Zurück</a>
+
+
+</form>
+
+

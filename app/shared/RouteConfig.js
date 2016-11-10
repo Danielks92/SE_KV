@@ -34,6 +34,13 @@ app
                 controller: 'AuctionViewController',
             })
 
+            .when('/createAuktion',{
+                templateUrl: 'createAuktion/auktion.html',
+                controller: 'AuktionController',
+                controllerAs: 'auktionController'
+
+            })
+
             .otherwise({
 
                 redirectTo: '/Login'

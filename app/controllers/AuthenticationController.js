@@ -11,7 +11,7 @@ app.controller('AuthenticationController', ['$location', 'LoginService', functio
 
     login.login = function (rcredentials) {
         LoginService.login(rcredentials).then(function () {
-            $location.path('/Login');
+            $location.path('/allView');
         });
     };
 

@@ -12,7 +12,7 @@ app.service('LoginService', ['$http', '$location', function ($http, $location) {
             "password": credentials.password,
         }).success(function (response) {
             alert("Login erfolgreich");
-            $location.path("/login");
+            $location.path("/allView");
         }).error(function (status) {
             alert("Login fehlgeschlagen");
             $location.path("/login");
