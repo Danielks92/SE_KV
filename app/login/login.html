@@ -1,11 +1,23 @@
-<form name="mylogin">
+<form name="mylogin" ng-controller="AuthenticationController">
 
-    <input type="text" ng-model="authForm.credentials.username" name="username" required placeholder="username">
-    <input type="password" ng-model="authForm.credentials.password" name="password" required placeholder="password">
-    <a href class="btn btn-default btn-sm" ng-model="authForm.button" ng-disabled="mylogin.$invalid" ng-click="authForm.login(authForm.credentials)">Login</a>
-    <a href class="btn btn-default btn-sm" ng-click="authForm.registerForm()">Register</a>
+<div id="loginForm">
+    <h1>Anmeldung</h1>
+    <div class="input-group">
+        <span class="input-group-addon">@</span>
+        <input type="text" class="form-control" placeholder="Username" ng-model="authForm.credentials.username" aria-describedby="basic-addon1" required required-message="'Yo! This field is required..'">
+
+    </div>
+    <div class="input-group" style="margin-top: 10px">
+        <span class="input-group-addon">$</span>
+        <input type="password" class = "form-control" placeholder="Password" ng-model="authForm.credentials.password" required required-message="'Yo! This field is required..'">
+    </div>
+        <a href class="btn btn-default btn-sm" ng-model="authForm.button" ng-disabled="mylogin.$invalid" ng-click="authForm.login(authForm.credentials)">Login</a>
+        <a href class="btn btn-default btn-sm" ng-click="authForm.registerForm()">Register</a>
+
+
     <br />
     <div ng-show="status">
         <label>Login failed</label>
     </div>
+</div>
 </form>

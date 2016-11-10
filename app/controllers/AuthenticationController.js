@@ -1,35 +1,21 @@
 'use strict';
 
-app.controller('AuthenticationController', ['$location', 'AuthService', function($location, AuthService) {
+app.controller('AuthenticationController', ['$location', 'LoginService', function($location, LoginService) {
 
-    // vm = viewModel -> avoid "this" reference problems
-    var auth = this;
+    var login = this;
 
-    auth.credentials = {};
-    auth.status = false;
+    login.credentials = {
+        password:'',
+        username:''
+    };
 
-    auth.login = function(credentials) {
-        AuthService.login(credentials).then(function successCallback(user) {
-            if (user != -1) {
-                //auth.setCurrentUser(user);
-                $location.path('/ModelForm');
-            } else {
-                auth.credentials = null;
-                auth.status = true;
-            }
-        }, function errorCallback() {
-            auth.credentials = null;
-            auth.status = true;
-        });
-    }
-
-    auth.notAuthorized = function() {
-        AuthService.notAuthorized().then(function() {
+    login.login = function (rcredentials) {
+        LoginService.login(rcredentials).then(function () {
             $location.path('/Login');
-        })
-    }
+        });
+    };
 
-    auth.registerForm = function () {
+    login.registerForm = function () {
         //$state.go('register');
         $location.path('/Register');
     }

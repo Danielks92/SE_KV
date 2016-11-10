@@ -6,13 +6,13 @@ app.controller('RegisterController', ['$location', 'RegisterService', function($
     // vm = viewModel -> avoid "this" reference problems
     var register = this;
 
-    register.rcredentials = {
-        email: '',
-        firstname: '',
-        lastname: '',
+    register.credentials = {
+        firstName: '',
+        lastName: '',
         password:'',
         password2:'',
-        username:''
+        username:'',
+        email: ''
     };
 
 

@@ -1,21 +1,25 @@
 <form name="myregister" ng-controller="RegisterController">
 
-    <input type="text" ng-model="regForm.rcredentials.username" name="username" required required-message="'Yo! This field is required..'" placeholder="username">
-    <input type="text" ng-model="regForm.rcredentials.email" name="email" required required-message="'Yo! This field is required..'" correct-email="" placeholder="email">
-    <input type="text" ng-model="regForm.rcredentials.firstname" name="firstname" required-message="'Yo! This field is required..'" required placeholder="firstname">
-    <input type="text" ng-model="regForm.rcredentials.lastname" name="lastname" required required-message="'Yo! This field is required..'" placeholder="lastname">
-    <input type="password" ng-model="regForm.rcredentials.password" name="password" required required-message="'Yo! This field is required..'" placeholder="password">
-    <input type="password" ng-model="regForm.rcredentials.password2" name="password2" required required-message="'Yo! This field is required..'" compare-to="regForm.rcredentials.password" placeholder="password2">
-   <!-- ng-pattern="{{rcredentials.password}}" <input type="text" ng-model="rcredentials.password2" name="password2" required placeholder="password2">-->
-    <a href class="btn btn-default btn-sm" ng-model="regForm.button" ng-disabled="myregister.$invalid" ng-click="regForm.register(regForm.rcredentials)">Register</a>
+    <div id="loginForm">
+        <h1>Registrierung</h1>
+    <input type="text" class="form-control" ng-model="regForm.credentials.username" name="username" required required-message="'Yo! This field is required..'" placeholder="username">
+    <input type="text" class="form-control" ng-model="regForm.credentials.email" name="email" required required-message="'Yo! This field is required..'" correct-email="" placeholder="email">
+    <input type="text" class="form-control" ng-model="regForm.credentials.firstName" name="firstname" required-message="'Yo! This field is required..'" required placeholder="firstname">
+    <input type="text" class="form-control" ng-model="regForm.credentials.lastName" name="lastname" required required-message="'Yo! This field is required..'" placeholder="lastname">
+    <input type="password" class="form-control" ng-model="regForm.credentials.password" name="password" required required-message="'Yo! This field is required..'" placeholder="password">
+    <input type="password" class="form-control" ng-model="regForm.credentials.password2" name="password2" required required-message="'Yo! This field is required..'" compare-to="regForm.credentials.password" placeholder="password2">
+
+    <a href class="btn btn-default btn-sm" ng-model="regForm.button" ng-disabled="myregister.$invalid" ng-click="regForm.register(regForm.credentials)">Register</a>
     <a href class="btn btn-default btn-sm" ng-click="regForm.back()">Back</a>
+
+    </div>
     <div ng-show="myregister.password2.$error.compareTo">
-        <!--<div ng-message="pattern">Not equal!!!</div>-->
         <label class="control-label">Password is Required</label>
     </div>
     <div ng-show="myregister.email.$error.correctEmail">
-        <!--<div ng-message="pattern">Not equal!!!</div>-->
         <label class="control-label">Email Adress is not valid</label>
     </div>
 
 </form>
+
+
