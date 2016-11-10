@@ -1,0 +1,7 @@
+<div ng-if="currentUser">Welcome, {{ currentUser.name }}</div>
+<!--<div ng-if="isAuthorized(userRoles.admin)">You're admin.</div>-->
+<div ng-switch on="currentUser.role">
+    <div ng-switch-when="USER_ROLES.admin">You're admin.</div>
+    <div ng-switch-when="ROLE_USER">You're editor.</div>
+    <div ng-switch-default ng-model="notAuthenticated"></div>
+</div>

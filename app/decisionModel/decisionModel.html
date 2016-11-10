@@ -1,0 +1,88 @@
+<div ng-app="decisionguidanceapp" id="page">
+
+	<!-- header -->
+	<div ng-controller="decisionModelCtrl as dMCtrl">
+		<h1>{{dMCtrl.category.title}}</h1>
+		<br>
+		<div id="navi_btns">
+			<div class="btn-group">
+				<button class="btn btn-primary" ng-model="checkModelSpecific.all" uib-btn-checkbox>General</button>
+				<button class="btn btn-primary" ng-model="checkModelSpecific.new" uib-btn-checkbox>+</button>
+			</div>
+
+			<div class="btn-group">
+				<button class="btn btn-primary" ng-model="checkModelGeneral.all" uib-btn-checkbox>Specific</button>
+
+				<button class="btn btn-primary" ng-model="dropDownItemSelected" ng-change="showSelectValue(dropDownItemSelected)" uib-dropdown-toggle ng-disabled="disabled" data-toggle="dropdown">+</button>
+
+				<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+					<li role="menuitem"><a href="#">Create a new Specific Model</a></li>
+					<li class="divider"></li>
+					<li role="menuitem"><a href="#">Derive from a General Model</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+
+	</div>
+
+
+
+	<!-- content -->
+	<div id="content">
+		<div id="inner_content">
+
+
+
+
+
+
+			<!-- searchbar -->
+			<div>
+				<input type="text" size="30" value="search">
+				<i class="fa fa-search i_border"> </i>
+				</input>
+			</div>
+
+			<!-- models -->
+
+			<div class="content_box">
+				<div class="content_box_inline"><h2>{{dMCTrl.category.model}}Titel</h2>
+					<p>Loraccusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+						Duis autem vel eum iriure dolissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,</p>
+
+					<button class="btn btn-primary" ng-model="dropDownItemSelected" ng-change="showSelectValue(dropDownItemSelected)" uib-dropdown-toggle ng-disabled="disabled" data-toggle="dropdown">Related  <span class="caret"></span></button>
+
+					<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+						<li role="menuitem"><a href="#">Testmodel</a></li>
+						<li class="divider"></li>
+						<li role="menuitem"><a href="#">Testmodel2</a></li>
+					</ul>
+
+					<div ng-repeat="model in dMCtrl.models">
+						{{dMCTrl.category.data}}
+					</div>
+				</div>
+				<div class="social_media_sidebar">
+					<div class="social_media_upvote">	<i class="fa fa-thumbs-o-up" style="font-size:30px"> </i> </div>
+					<div class="social_media_downvote"> <i class="fa fa-thumbs-o-down" style="font-size:30px"> </i> </div>
+					<div class="social_media_favorite"> <i class="fa fa-star" style="font-size:30px"> </i> </div>
+				</div>
+			</div>
+
+
+
+
+
+			<!-- pagination -->
+
+			<div ng-controller="paginationCtrl">
+				<ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+			</div>
+
+
+		</div>
+	</div>
+</div>

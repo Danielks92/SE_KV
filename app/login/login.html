@@ -1,0 +1,11 @@
+<form name="mylogin">
+
+    <input type="text" ng-model="authForm.credentials.username" name="username" required placeholder="username">
+    <input type="password" ng-model="authForm.credentials.password" name="password" required placeholder="password">
+    <a href class="btn btn-default btn-sm" ng-model="authForm.button" ng-disabled="mylogin.$invalid" ng-click="authForm.login(authForm.credentials)">Login</a>
+    <a href class="btn btn-default btn-sm" ng-click="authForm.registerForm()">Register</a>
+    <br />
+    <div ng-show="status">
+        <label>Login failed</label>
+    </div>
+</form>
