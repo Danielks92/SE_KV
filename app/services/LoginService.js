@@ -1,7 +1,7 @@
 /**
  * Created by Daniel on 10.11.2016.
  */
-app.service('LoginService', ['$http', '$location', function ($http, $location) {
+app.service('LoginService', ['$http', '$location', 'User', function ($http, $location, User) {
 
     var loginService = {};
     var userPath = 'http://localhost:1337/users/logIn/userId';
@@ -12,6 +12,7 @@ app.service('LoginService', ['$http', '$location', function ($http, $location) {
             "password": credentials.password,
         }).success(function (response) {
             alert("Login erfolgreich");
+            User.setUser(credentials.username);
             $location.path("/allView");
         }).error(function (status) {
             alert("Login fehlgeschlagen");
@@ -22,9 +23,25 @@ app.service('LoginService', ['$http', '$location', function ($http, $location) {
     return loginService;
 }]);
 
+app.factory('Auction', function() {
+    var auction = {};
+    return {
+        setAuction: function(auc) {
+            this.auc = auc;
+            return auction;
+        }
+    }
+});
 
-
-
+app.factory('User', function() {
+    var user = {};
+    return {
+        setUser: function(usr) {
+            this.usr = usr;
+            return user;
+        }
+    }
+});
 
 
 

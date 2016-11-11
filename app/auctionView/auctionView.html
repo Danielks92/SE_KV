@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<header-nav></header-nav>
 
-</body>
-</html>
+<h2>Auktion von : {{auctionView.auction.title}}</h2>
+<p>Beschreibung: {{auctionView.auction.description}}</p>
+<p>Mindestgebot für diesen Artikel beträgt {{auctionView.auction.minPrice}}</p>
+<p>Zustand des Artikels: {{auctionView.auction.condition}}</p>
+<p>Verkäufer: {{auctionView.auction.userCreate}}</p>
+<div ng-if="auctionView.auction.currentUser != 'noUser'">
+    <p>Aktuelles Höchstgebot: {{auctionView.auction.currentPrice}} von User: {{auctionView.auction.currentUser}}</p>
+</div>
+
+<p>Diese Auktion läuft bis zum: {{auctionView.auction.date}} ( {{auctionView.getDays(auctionView.getDate(actionView.auction.date))}}</p>
+<p>Geben Sie ein Gebot ab: </p>
+<input type="number" class="form-control" ng-model="auctionView.newPrice.currentPrice" name="currentPrice" required-message="'Yo! This field is required..'" required placeholder="Ihr Gebot">
+
+
+<a href class="btn btn-default btn-sm" ng-model="auctionView.button" ng-click="auctionView.currentPrice(auctionView.newPrice)">Gebot abgeben</a>
+
+
+

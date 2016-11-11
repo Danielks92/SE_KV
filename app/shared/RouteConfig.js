@@ -32,12 +32,13 @@ app
 
                 templateUrl: 'auctionView/auctionView.html',
                 controller: 'AuctionViewController',
+                controllerAs: 'auctionView'
             })
 
             .when('/createAuktion',{
                 templateUrl: 'createAuktion/auktion.html',
                 controller: 'AuktionController',
-                controllerAs: 'auktionController'
+                controllerAs: 'auktionForm'
 
             })
 
