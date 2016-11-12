@@ -1,7 +1,5 @@
-/**
- * Created by Alex on 26.10.2016.
- */
 
+// routfile. redirects to templates by given path
 app
     .config(function($routeProvider)
     {
@@ -33,6 +31,12 @@ app
                 templateUrl: 'auctionView/auctionView.html',
                 controller: 'AuctionViewController',
                 controllerAs: 'auctionView'
+            })
+
+            .when('/userProfile', {
+                templateUrl: 'userProfile/userProfile.html',
+                controller: 'ProfileController',
+                controllerAs: 'profileController'
             })
 
             .when('/createAuktion',{

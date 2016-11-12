@@ -1,6 +1,9 @@
 /**
  * Created by Daniel on 10.11.2016.
  */
+
+// login. server handles false input
+
 app.service('LoginService', ['$http', '$location', 'User', function ($http, $location, User) {
 
     var loginService = {};
@@ -9,10 +12,10 @@ app.service('LoginService', ['$http', '$location', 'User', function ($http, $loc
     loginService.login = function (credentials) {
         return $http.put(userPath, {
             "username": credentials.username,
-            "password": credentials.password,
+            "password": credentials.password
         }).success(function (response) {
+            User.setUser(credentials);
             alert("Login erfolgreich");
-            User.setUser(credentials.username);
             $location.path("/allView");
         }).error(function (status) {
             alert("Login fehlgeschlagen");

@@ -1,13 +1,15 @@
+
+<!-- returns all active auctions -->
+
 <header-nav></header-nav>
 
 
+<div id="contentView">
 
-
-
-
-<div ng-repeat="auction in allView.allAuctions track by $index">
+<div ng-repeat="auction in allView.allAuctions track by $index" class="border_bottom">
     <!--<a href="#/ModelForm"><div class="content_box_inline"><h2>{{model.title}}</h2></a>-->
    <a href ng-click="allView.view(auction)"><h2>{{auction.bookTitle}}</h2></a>
     <p>{{auction.description}}</p>
 
+</div>
 </div>

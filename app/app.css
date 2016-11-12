@@ -55,6 +55,19 @@ p {
     border-radius: 5px;
 }
 
+#contentView{
+    width: 800px;
+    height: auto;
+    margin: 20px auto 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-color: #e6e6e6;
+    border-radius: 5px;
+}
+
+.border_bottom{
+    border-bottom: solid #e6e6e6 2px;
+}
 
 .padd{
     margin-top: 5px;

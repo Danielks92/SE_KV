@@ -2,6 +2,7 @@
  * Created by Daniel on 10.11.2016.
  */
 
+// controller returns all active auctions and saves a given auction to an app factory for use outside of this controller
 
 app.controller('AllViewController', ['$location', '$http', 'Auction', function($location,$http, Auction) {
 

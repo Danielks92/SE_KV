@@ -1,4 +1,4 @@
-var app = angular.module('decisionguidanceapp', ['ngRoute', 'ui.router', 'ngMessages', 'xeditable'])
+var app = angular.module('bookbayapp', ['ngRoute', 'ui.router', 'ngMessages', 'xeditable'])
     .constant('AUTH_EVENTS', {
         loginSuccess: 'auth-login-success',
         loginFailed: 'auth-login-failed',

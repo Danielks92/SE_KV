@@ -1,0 +1,27 @@
+<!-- userprofile-->
+
+
+<header-nav></header-nav>
+
+<div id="contentView">
+<h1>Verkaufte Bücher</h1>
+    <div ng-repeat="sold in profileController.allSold track by $index" class="border_bottom">
+        <!--<a href="#/ModelForm"><div class="content_box_inline"><h2>{{model.title}}</h2></a>-->
+        <h2>Buchtitel: {{sold.bookTitle}}</h2>
+        <p>Verkaufspreis: {{sold.currentPrice}}</p>
+        <p>Käufer: {{sold.currentUser}}</p>
+        <a href class="btn btn-default btn-sm" ng-model="profileController.button" ng-click="profileController.sold(sold)">Buch verkauft</a>
+    </div>
+
+<h1>Gekaufte Bücher</h1>
+    <div ng-repeat="bought in profileController.allBought track by $index" class="border_bottom">
+            <!--<a href="#/ModelForm"><div class="content_box_inline"><h2>{{model.title}}</h2></a>-->
+            <h2>Buchtitel: {{bought.bookTitle}}</h2>
+            <p>Kaufenpreis: {{bought.currentPrice}}</p>
+            <p>Verkäufer: {{bought.currentUser}}</p>
+            <p>{{profileController.userinfo(bought.currentUser).email}}</p>
+
+</div>
+
+
+

@@ -1,3 +1,6 @@
+
+// registation service. server handles false input
+
 app.service('RegisterService', ['$http', '$location', function ($http, $location) {
 
     var registerService = {};

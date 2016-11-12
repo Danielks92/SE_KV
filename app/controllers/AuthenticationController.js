@@ -1,6 +1,8 @@
 'use strict';
 
-app.controller('AuthenticationController', ['$location', 'LoginService', function($location, LoginService) {
+// controller for handling registration and login
+
+app.controller('AuthenticationController', ['$location', 'LoginService' ,'User', function($location, LoginService, User) {
 
     var login = this;
 
@@ -11,6 +13,7 @@ app.controller('AuthenticationController', ['$location', 'LoginService', functio
 
     login.login = function (rcredentials) {
         LoginService.login(rcredentials).then(function () {
+            User.setUser(rcredentials);
             $location.path('/allView');
         });
     };

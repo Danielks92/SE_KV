@@ -1,3 +1,5 @@
+// not used
+
 var ApplicationController = function($scope, $rootScope, $location, USER_ROLES, AuthService) {
     $scope.currentUser = null;
     $scope.userRoles = USER_ROLES;

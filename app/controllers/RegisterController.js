@@ -1,7 +1,6 @@
-'use strict';
+// redirect to registration service
 
 app.controller('RegisterController', ['$location', 'RegisterService', function($location, RegisterService) {
-
 
     // vm = viewModel -> avoid "this" reference problems
     var register = this;
